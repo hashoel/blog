@@ -2,24 +2,44 @@
 import { SHARE_LINKS } from "@/constants";
 import LinkButton from "./LinkButton.astro";
 
-const URL = Astro.url;
----
+export interface Props {
+  title?: string;
+  content?: string; // raw markdown/text content to share
+}
 
+const URL = Astro.url;
+const { title = "", content = "" } = Astro.props;
+
+// Prepare full share text (title + URL + full content)
+const fullShareText = `${title}\n${URL}\n\n${content}`;
+const encodedShareText = encodeURIComponent(fullShareText);
+
+console.log("content", content);
+---
 {
   SHARE_LINKS.length > 0 && (
     <div class="flex flex-none flex-col items-center justify-center gap-1 md:items-start">
       <span class="italic">שתף את הפוסט ב:</span>
       <div class="text-center">
-        {SHARE_LINKS.map(social => (
-          <LinkButton
-            href={`${social.href + URL}`}
-            class="scale-90 p-2 hover:rotate-6 sm:p-1"
-            title={social.linkTitle}
-          >
-            <social.icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
-            <span class="sr-only">{social.linkTitle}</span>
-          </LinkButton>
-        ))}
+        {SHARE_LINKS.map(social => {
+          // Build href per social. For WhatsApp & Mail include full content.
+          let href = `${social.href}${URL}`;
+          if (social.name === "WhatsApp" || social.name === "Mail") {
+            // Their base href ends before message body (WhatsApp: ?text= , Mail: body= )
+            href = `${social.href}${encodedShareText}`;
+          }
+          const Icon = social.icon;
+          return (
+            <LinkButton
+              href={href}
+              class="scale-90 p-2 hover:rotate-6 sm:p-1"
+              title={social.linkTitle}
+            >
+              <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
+              <span class="sr-only">{social.linkTitle}</span>
+            </LinkButton>
+          );
+        })}
       </div>
     </div>
   )

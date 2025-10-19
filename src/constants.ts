@@ -6,6 +6,7 @@ import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
+import IconPDF from "@/assets/icons/IconPDF.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
@@ -58,6 +59,7 @@ export const SHARE_LINKS: Social[] = [
     linkTitle: `שתף פוסט ב־WhatsApp`,
     icon: IconWhatsapp,
   },
+
   // {
   //   name: "Facebook",
   //   href: "https://www.facebook.com/sharer.php?u=",
@@ -87,5 +89,11 @@ export const SHARE_LINKS: Social[] = [
     href: "mailto:?subject=ראה%20את%20הפוסט&body=",
     linkTitle: `שתף פוסט במייל`,
     icon: IconMail,
+  },
+  {
+    name: "PDF",
+    href: "",
+    linkTitle: `שתף פוסט כקובץ PDF`,
+    icon: IconPDF,
   },
 ] as const;
