@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import "tailwindcss";
 @import "./typography.css";
 
@@ -10,6 +11,7 @@ html[data-theme="light"] {
   --accent: #006cac;
   --muted: #e6e6e6;
   --border: #ece9e9;
+  --font-mono: 'Varela Round', system-ui, sans-serif;
 }
 
 html[data-theme="dark"] {
@@ -39,7 +41,9 @@ html[data-theme="dark"] {
     direction: rtl;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    /*@apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;*/
+    @apply flex min-h-svh flex-col bg-background text-foreground selection:bg-accent/75 selection:text-background;
+    font-family: 'Varela Round', system-ui, sans-serif;
     direction: rtl;
   }
   a,

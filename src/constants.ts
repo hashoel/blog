@@ -1,5 +1,7 @@
 import type { Props } from "astro";
 import IconMail from "@/assets/icons/IconMail.svg";
+import IconRss from "@/assets/icons/IconRss.svg";
+
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
@@ -17,27 +19,33 @@ interface Social {
 }
 
 export const SOCIALS: Social[] = [
+  // {
+  //   name: "GitHub",
+  //   href: "https://github.com/satnaing/astro-paper",
+  //   linkTitle: `${SITE.title} ב־GitHub`,
+  //   icon: IconGitHub,
+  // },
+  // {
+  //   name: "X",
+  //   href: "https://x.com/username",
+  //   linkTitle: `${SITE.title} ב־X`,
+  //   icon: IconBrandX,
+  // },
+  // {
+  //   name: "LinkedIn",
+  //   href: "https://www.linkedin.com/in/username/",
+  //   linkTitle: `${SITE.title} ב־LinkedIn`,
+  //   icon: IconLinkedin,
+  // },
   {
-    name: "GitHub",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} ב־GitHub`,
-    icon: IconGitHub,
-  },
-  {
-    name: "X",
-    href: "https://x.com/username",
-    linkTitle: `${SITE.title} ב־X`,
-    icon: IconBrandX,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/username/",
-    linkTitle: `${SITE.title} ב־LinkedIn`,
-    icon: IconLinkedin,
+    name: "RSS",
+    href: "/rss.xml",
+    linkTitle: `הרשם לעדכוני RSS מ${SITE.title}`,
+    icon: IconRss,
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:contact@hashoel.org",
     linkTitle: `שלח אימייל אל ${SITE.title}`,
     icon: IconMail,
   },
@@ -50,30 +58,30 @@ export const SHARE_LINKS: Social[] = [
     linkTitle: `שתף פוסט ב־WhatsApp`,
     icon: IconWhatsapp,
   },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/sharer.php?u=",
-    linkTitle: `שתף פוסט ב־Facebook`,
-    icon: IconFacebook,
-  },
-  {
-    name: "X",
-    href: "https://x.com/intent/post?url=",
-    linkTitle: `שתף פוסט ב־X`,
-    icon: IconBrandX,
-  },
-  {
-    name: "Telegram",
-    href: "https://t.me/share/url?url=",
-    linkTitle: `שתף פוסט ב־Telegram`,
-    icon: IconTelegram,
-  },
-  {
-    name: "Pinterest",
-    href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `שתף פוסט ב־Pinterest`,
-    icon: IconPinterest,
-  },
+  // {
+  //   name: "Facebook",
+  //   href: "https://www.facebook.com/sharer.php?u=",
+  //   linkTitle: `שתף פוסט ב־Facebook`,
+  //   icon: IconFacebook,
+  // },
+  // {
+  //   name: "X",
+  //   href: "https://x.com/intent/post?url=",
+  //   linkTitle: `שתף פוסט ב־X`,
+  //   icon: IconBrandX,
+  // },
+  // {
+  //   name: "Telegram",
+  //   href: "https://t.me/share/url?url=",
+  //   linkTitle: `שתף פוסט ב־Telegram`,
+  //   icon: IconTelegram,
+  // },
+  // {
+  //   name: "Pinterest",
+  //   href: "https://pinterest.com/pin/create/button/?url=",
+  //   linkTitle: `שתף פוסט ב־Pinterest`,
+  //   icon: IconPinterest,
+  // },
   {
     name: "Mail",
     href: "mailto:?subject=ראה%20את%20הפוסט&body=",
