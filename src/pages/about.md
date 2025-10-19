@@ -1,37 +1,37 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "אודות"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+AstroPaper הוא תבנית בלוג מינימלית, נגישה וידידותית לקידום אתרים (SEO) שנבנתה עם [Astro](https://astro.build/) ו‑[Tailwind CSS](https://tailwindcss.com/).
 
 ![Astro Paper](public/astropaper-og.jpg)
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+AstroPaper מספק בסיס יציב לבלוגים ואף לפורטפוליו – עם תמיכה מלאה ב‑Markdown, מצב כהה מובנה, ומבנה נקי שעובד מיד מהקופסה.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+פוסטי הבלוג בתבנית הזו משמשים גם כמדריכים, תיעוד או מאמרי דוגמה – מה שהופך את AstroPaper לנקודת פתיחה גמישה לאתר התוכן הבא שלך.
 
-## Features
+## תכונות
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+AstroPaper מגיע עם סט של תכונות שימושיות שמקלות ומייעלות פרסום תוכן:
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+- מותאם לקידום אתרים (SEO)
+- ביצועים מהירים
+- מצב בהיר וכהה
+- ניתן להתאמה גבוהה
+- ארגון פוסטים לפי תגיות וקטגוריות
+- רספונסיבי ונגיש
+- חיפוש סטטי עם [PageFind](https://pagefind.app/)
+- יצירת אוטומטית של תמונות חברתיות (OG)
 
-and so much more.
+ועוד הרבה.
 
-## Show your support
+## הבעת תמיכה
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+אם אתה אוהב את [AstroPaper](https://github.com/satnaing/astro-paper), שקול לתת כוכב ⭐.
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+מצאת באג 🐛 או שיש לך שיפור ✨? אפשר לפתוח [Issue](https://github.com/satnaing/astro-paper/issues), לשלוח [Pull Request](https://github.com/satnaing/astro-paper/pulls) או להתחיל [Discussion](https://github.com/satnaing/astro-paper/discussions).
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+אם התבנית הזו מועילה לך, אפשר גם [לתמוך בי ב‑GitHub](https://github.com/sponsors/satnaing) או [לקנות לי קפה](https://buymeacoffee.com/satnaing) – כל שקל חשוב.
 
-Kyay zuu! 🙏🏼
+תודה רבה! 🙏

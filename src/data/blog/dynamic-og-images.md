@@ -2,94 +2,40 @@
 author: Sat Naing
 pubDatetime: 2022-12-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
-title: Dynamic OG image generation in AstroPaper blog posts
+title: יצירה דינמית של תמונות OG בפוסטים של AstroPaper
 slug: dynamic-og-image-generation-in-astropaper-blog-posts
 featured: false
 draft: false
 tags:
-  - docs
-  - release
-description: New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+  - תיעוד
+  - גרסה
+description: פיצ'ר חדש בגרסה v1.4.0: יצירת תמונת OG דינמית לכל פוסט.
 ---
 
-New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
+בגרסה v1.4.0 נוספה יכולת ליצור תמונות OG (תמונות שיתוף) דינמיות בזמן הבנייה לכל פוסט שאין לו תמונה מוגדרת.
 
-## Table of contents
+## תוכן העניינים
 
-## Intro
+## הקדמה
 
-OG images (aka Social Images) play an important role in social media engagements. In case you don't know what OG image means, it is an image displayed whenever we share our website URL on social media such as Facebook, Discord etc.
+תמונות OG חשובות לשיתופים ברשתות חברתיות. אם לא הוגדרה תמונה לפוסט, בעבר הייתה נופלת תמונת ברירת מחדל זהה לכולם.
 
-> The Social Image used for Twitter is technically not called OG image. However, in this post, I'll be using the term OG image for all types of Social Images.
+## הפתרון הדינמי
 
-## Default/Static OG image (the old way)
+בעזרת הספרייה Satori של Vercel נוצרת תמונה בזמן הבנייה הכוללת כותרת פוסט, שם מחבר ושם האתר. כך כל פוסט מקבל תמונה ייחודית בלי צורך בהגדרה ידנית.
 
-AstroPaper already provided a way to add an OG image to a blog post. The author can specify the OG image in the frontmatter `ogImage`. Even when the author doesn't define the OG image in the frontmatter, the default OG image will be used as a fallback (in this case `public/astropaper-og.jpg`). But the problem is that the default OG image is static, which means every blog post that does not include an OG image in the frontmatter will always use the same default OG image despite each post title/content being different from others.
+תנאים ליצירה:
 
-## Dynamic OG Image
+- אין ערך `ogImage` בפרונטמאטר
+- הפוסט אינו טיוטה
 
-Generating a dynamic OG image for each post allows the author to avoid specifying an OG image for every single blog post. Besides, this will prevent the fallback OG image from being identical to all blog posts.
+## ביצועים
 
-In AstroPaper v1.4.0, Vercel's [Satori](https://github.com/vercel/satori) package is used for dynamic OG image generation.
+כל תמונה מוסיפה ~שנייה לבנייה. במספר גדול של פוסטים זמן הבנייה גדל ליניארית. אם יש הרבה תוכן שקול לכבות (`dynamicOgImage: false`).
 
-Dynamic OG images will be generated at build time for blog posts that
+## מגבלות
 
-- don't include OG image in the frontmatter
-- are not marked as draft.
+- תמיכה חלקית בשפות RTL ב‑Satori
+- אמוג'י בכותרת עשוי לדרוש התאמה בגופנים (ראה loadGoogleFont.ts)
 
-## Anatomy of AstroPaper dynamic OG image
-
-Dynamic OG image of AstroPaper includes _the blog post title_, _author name_ and _site title_. Author name and site title will be retrieved via `SITE.author` and `SITE.title` of **"src/config.ts"** file. The title is generated from the blog post frontmatter `title`.  
-![Example Dynamic OG Image link](https://user-images.githubusercontent.com/53733092/209704501-e9c2236a-3f4d-4c67-bab3-025aebd63382.png)
-
-### Issue Non-Latin Characters
-
-Titles with non-latin characters won't display properly out of the box. To resolve this, we have to replace `fontsConfig` inside `loadGoogleFont.ts` with your preferred font.
-
-```ts file=src/utils/loadGoogleFont.ts
-async function loadGoogleFonts(
-  text: string
-): Promise<
-  Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
-> {
-  const fontsConfig = [
-    {
-      name: "Noto Sans JP",
-      font: "Noto+Sans+JP",
-      weight: 400,
-      style: "normal",
-    },
-    {
-      name: "Noto Sans JP",
-      font: "Noto+Sans+JP:wght@700",
-      weight: 700,
-      style: "normal",
-    },
-    { name: "Noto Sans", font: "Noto+Sans", weight: 400, style: "normal" },
-    {
-      name: "Noto Sans",
-      font: "Noto+Sans:wght@700",
-      weight: 700,
-      style: "normal",
-    },
-  ];
-  // ...
-}
-```
-
-> Check out [this PR](https://github.com/satnaing/astro-paper/pull/318) for more info.
-
-## Trade-off
-
-While this is a nice feature to have, there's a trade-off. Each OG image takes roughly one second to generate. This might not be noticeable at first, but as the number of blog posts grows, you might want to disable this feature. Since every OG image takes time to generate, having many of them will increase the build time linearly.
-
-For example: If one OG image takes one second to generate, then 60 images will take around one minute, and 600 images will take approximately 10 minutes. This can significantly impact build times as your content scales.
-
-Related issue: [#428](https://github.com/satnaing/astro-paper/issues/428)
-
-## Limitations
-
-At the time of writing this, [Satori](https://github.com/vercel/satori) is fairly new and has not reached major release yet. So, there are still some limitations to this dynamic OG image feature.
-
-- Besides, RTL languages are not supported yet.
-- [Using emoji](https://github.com/vercel/satori#emojis) in the title might be a little bit tricky.
+כדי לתמוך בתווים לא לטיניים החלף הגדרות גופנים בקובץ הטעינה.
