@@ -72,12 +72,12 @@ export const SHARE_LINKS: Social[] = [
   //   linkTitle: `שתף פוסט ב־X`,
   //   icon: IconBrandX,
   // },
-  // {
-  //   name: "Telegram",
-  //   href: "https://t.me/share/url?url=",
-  //   linkTitle: `שתף פוסט ב־Telegram`,
-  //   icon: IconTelegram,
-  // },
+  {
+    name: "Telegram",
+    href: "https://t.me/share/url?url=השואל&text=",
+    linkTitle: `שתף פוסט ב־Telegram`,
+    icon: IconTelegram,
+  },
   // {
   //   name: "Pinterest",
   //   href: "https://pinterest.com/pin/create/button/?url=",
