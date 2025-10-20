@@ -1,0 +1,23 @@
+@media print {
+  header,
+  footer,
+  #main-content > button,
+  #main-content > div[data-pagefind-ignore],
+  #main-content > ul,
+  #main-content > hr,
+  #main-content > a,
+  .app-prose .edit-post-link,
+  .share-links-container {
+    display: none;
+  }
+
+  main#main-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  article {
+    margin-top: 0 !important;
+  }
+}
+
