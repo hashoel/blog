@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2025-10-20T06:35:31.366Z
+pubDatetime: 2025-10-19T06:35:31.366Z
 title: ליכא מילי דלא רמיזא באורייתא
 slug: lica-mili-dla-rmizi-beoriitha
 featured: false

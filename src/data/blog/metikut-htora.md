@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2025-10-21T06:35:31.366Z
+pubDatetime: 2025-10-20T06:35:31.366Z
 title: אם היו בני אדם מרגישים במתיקות התיירה
 slug: metikut-htora
 featured: false
