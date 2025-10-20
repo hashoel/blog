@@ -9,14 +9,14 @@ export const SITE = {
   postPerIndex: 5,
   postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
-  showArchives: true,
+  showArchives: false,
   showBackButton: true, // show back button in post detail
   editPost: {
     enabled: false,
     text: "Edit page",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
-  dynamicOgImage: true,
+  dynamicOgImage: false,
   dir: "rtl", // "rtl" | "auto"
   lang: "he", // html lang code. Set this empty and default will be "en"
   timezone: "Asia/Jerusalem",
