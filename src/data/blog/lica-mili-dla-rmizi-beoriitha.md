@@ -2,10 +2,17 @@
 pubDatetime: 2025-10-20T06:35:31.366Z
 title: ליכא מילי דלא רמיזא באורייתא
 slug: lica-mili-dla-rmizi-beoriitha
-featured: true
+featured: false
 draft: false
 tags:
-  - תיעוד
+  - אורייתא
+  - תורה
+  - אטומים
+  - טבלה מחזורית
+  - DNA
+  - כדור הארץ
+  - בריאה
+  - מדע
 description: אז למה לעזאזל לא כתוב שם כלום
 ---
 
