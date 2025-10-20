@@ -4,17 +4,17 @@ import LinkButton from "./LinkButton.astro";
 
 export interface Props {
   title?: string;
-  content?: string; // raw markdown/text content to share
+  subtitle?: string;
+  content?: string;
 }
 
 const URL = Astro.url;
-const { title = "", content = "" } = Astro.props;
+const { title = "", content = "", subtitle = "" } = Astro.props;
 
 // Prepare full share text (title + URL + full content)
-const fullShareText = `${title}\n${URL}\n\n${content}`;
+const fullShareText = `${title}\n${subtitle}\n${URL}\n\n${content}`;
 const encodedShareText = encodeURIComponent(fullShareText);
 
-console.log("content", content);
 ---
 {
   SHARE_LINKS.length > 0 && (
@@ -34,6 +34,7 @@ console.log("content", content);
               href={href}
               class="scale-90 p-2 hover:rotate-6 sm:p-1"
               title={social.linkTitle}
+              newTab={true}
             >
               <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
               <span class="sr-only">{social.linkTitle}</span>
