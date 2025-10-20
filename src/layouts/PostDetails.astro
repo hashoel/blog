@@ -100,12 +100,12 @@ const nextPost =
       {title}
     </h1>
       <br>
-      <h3
+      <p
               transition:name={slugifyStr(description)}
               class="inline-block text-lg sm:text-xl mt-2 text-foreground/60 font-normal"
       >
           {description}
-      </h3>
+      </p>
     <div class="my-2 flex items-center gap-2">
       <Datetime {pubDatetime} {modDatetime} {timezone} size="lg" />
       <span
