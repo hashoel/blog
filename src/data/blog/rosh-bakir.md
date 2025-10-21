@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2025-10-18T06:35:31.366Z
+pubDatetime: 2025-10-17T06:35:31.366Z
 title: נדפוק את הראש בקיר ולא נתגייס
 slug: rosh-kakir
 featured: false

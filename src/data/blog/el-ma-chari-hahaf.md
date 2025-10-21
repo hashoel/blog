@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2025-10-17T06:35:31.366Z
+pubDatetime: 2025-10-16T06:35:31.366Z
 title: על מה חרי האף הזה
 slug: el-ma-chari-hahaf
 featured: false
