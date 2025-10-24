@@ -37,10 +37,13 @@ const encodedShareText = encodeURIComponent(fullShareText);
             );
           }
 
-          // Build href per social. For WhatsApp, Mail & Telegram include full content.
+          // Build href per social. For WhatsApp, Mail include full content.
           // let href = `${social.href}${URL}`;
-          const href = `${social.href}${encodedShareText}`;
+          let href = `${social.href}${encodedShareText}`;
 
+          if (social.name === "Telegram") {
+            href = `${social.href}${URL}&text=${title} ${subtitle} `;
+          }
           const Icon = social.icon;
           return (
             <LinkButton

@@ -74,7 +74,7 @@ export const SHARE_LINKS: Social[] = [
   // },
   {
     name: "Telegram",
-    href: "https://telegram.me/share/url?url=השואל&text=kkk",
+    href: "https://t.me/share/url?url=",
     linkTitle: `שתף פוסט ב־Telegram`,
     icon: IconTelegram,
   },
