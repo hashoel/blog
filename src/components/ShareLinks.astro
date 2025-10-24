@@ -21,7 +21,7 @@ const encodedShareText = encodeURIComponent(fullShareText);
     <div
       class="share-links-container flex flex-none flex-col items-center justify-center gap-1 md:items-start"
     >
-      <span class="italic">שתף את הפוסט ב:</span>
+      <!--<span class="italic">שתף את הפוסט ב:</span>-->
       <div class="text-center">
         {SHARE_LINKS.map(social => {
           if (social.name === "PDF") {
@@ -31,7 +31,20 @@ const encodedShareText = encodeURIComponent(fullShareText);
                 title={social.linkTitle}
                 onclick="window.print()"
               >
-                <social.icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
+                <social.icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent hover:text-accent sm:scale-110" />
+                <span class="sr-only">{social.linkTitle}</span>
+              </button>
+            );
+          }
+
+          if (social.name === "Copy") {
+            return (
+              <button
+                class="scale-90 p-2 hover:rotate-6 sm:p-1"
+                title={social.linkTitle}
+                onclick={`navigator.clipboard.writeText('${URL}')`}
+              >
+                <social.icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent hover:text-accent sm:scale-110" />
                 <span class="sr-only">{social.linkTitle}</span>
               </button>
             );
@@ -52,7 +65,7 @@ const encodedShareText = encodeURIComponent(fullShareText);
               title={social.linkTitle}
               newTab={true}
             >
-              <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110" />
+              <Icon class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 sm:scale-110" />
               <span class="sr-only">{social.linkTitle}</span>
             </LinkButton>
           );

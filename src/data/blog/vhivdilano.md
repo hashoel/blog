@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2025-10-22T05:35:31.366Z
+pubDatetime: 2025-10-23T05:35:31.366Z
 title: והבדילנו מן הטועים
 slug: vhivdilano
 featured: false

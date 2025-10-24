@@ -7,6 +7,7 @@ import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconPDF from "@/assets/icons/IconPDF.svg";
+import IconCopy from "@/assets/icons/IconCopy.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
@@ -89,6 +90,12 @@ export const SHARE_LINKS: Social[] = [
     href: "mailto:?subject=ראה%20את%20הפוסט&body=",
     linkTitle: `שתף פוסט במייל`,
     icon: IconMail,
+  },
+  {
+    name: "Copy",
+    href: "",
+    linkTitle: `העתק ללוח קישור לשיתוף`,
+    icon: IconCopy,
   },
   {
     name: "PDF",
